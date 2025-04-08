@@ -33,7 +33,10 @@ const userSchema = new Schema<UserDocument>(
       required: true,
     },
     // set savedBooks to be an array of data that adheres to the bookSchema
-    savedBooks: [bookSchema],
+    savedBooks: {
+      type: [bookSchema],
+      default: [],
+    }
   },
   // set this to use virtual below
   {
