@@ -6,3 +6,9 @@ export interface User {
   password: string | null;
   savedBooks: Book[];
 }
+
+export interface UserInput {
+  username: string | null;
+  email: string | null;
+  password: string | null;
+}
