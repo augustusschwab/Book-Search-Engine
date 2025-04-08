@@ -24,10 +24,10 @@ type Book {
 }
 
 input BookInput {
-    authors: [String]
-    description: String!
-    title: String!
     bookId: String!
+    authors: [String]
+    title: String!
+    description: String!
     image: String
     link: String
 }
