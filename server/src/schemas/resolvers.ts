@@ -51,7 +51,7 @@ const resolvers = {
         addUser: async(_parent: unknown, { input }: AddUserArgs) => {
             const user = await User.create({...input});
             const token = signToken(user.username, user.password, user._id);
-
+            
             return { token, user };
         },
 
