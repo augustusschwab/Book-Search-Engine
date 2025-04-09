@@ -3,6 +3,7 @@ import path from 'node:path';
 import type { Request, Response } from 'express';
 import db from './config/connection.js';
 import { authenticateToken } from './services/auth.js';
+import { fileURLToPath } from 'url';
 
 // Import the ApolloServer class
 import { ApolloServer } from '@apollo/server';
@@ -10,6 +11,9 @@ import { expressMiddleware } from '@apollo/server/express4'
 
 // Import GraphQL schema
 import { typeDefs, resolvers } from './schemas/index.js'
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const server = new ApolloServer({
   typeDefs,
